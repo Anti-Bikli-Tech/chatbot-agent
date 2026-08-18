@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  
+}
+
+model Conversation {
+  id        String    @id @default(uuid())
+  phone     String
+  status    String    @default("open")
+  messages  Message[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([phone])
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  conversationId String
+  role           String
+  content        String
+  createdAt      DateTime     @default(now())
+}
+
+model Document {
+  id        String   @id @default(uuid())
+  filename  String
+  source    String?
+  chunks    Chunk[]
+  createdAt DateTime @default(now())
+}
+
+model Chunk {
+  id         String                     @id @default(uuid())
+  document   Document                   @relation(fields: [documentId], references: [id])
+  documentId String
+  content    String
+  embedding  Unsupported("vector(768)")
+  createdAt  DateTime                   @default(now())
+}

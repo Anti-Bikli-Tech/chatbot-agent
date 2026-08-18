@@ -1,0 +1,8 @@
+Q: What are your business hours?
+A: We are open Monday to Saturday, 10 AM to 6 PM. Closed on Sundays.
+
+
+
+Q: What payment methods do you accept?
+A: We accept UPI, credit/debit cards, and cash on delivery.
+
