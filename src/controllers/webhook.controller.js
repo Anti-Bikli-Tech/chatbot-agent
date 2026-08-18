@@ -1,5 +1,5 @@
 // src/controllers/webhook.controller.js
-const env = require("../config/env");
+const env = require("../config/exampleenv");
 const { sendTextMessage } = require("../services/whatsapp.service");
 const { handleUserQuery } = require("../services/rag.service");
 

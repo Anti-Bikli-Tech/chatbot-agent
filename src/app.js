@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const webhookRoutes = require("./routes/webhook.routes");
+const webhookRoutes = require("./routes/webhook.route.js");
 
 const app = express();
 

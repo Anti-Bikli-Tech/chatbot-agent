@@ -1,5 +1,5 @@
 const axios = require("axios");
-const env = require("../config/env");
+const env = require("../config/exampleenv");
 
 const BASE_URL = `https://graph.facebook.com/v20.0/${env.phoneNumberId}/messages`;
 
