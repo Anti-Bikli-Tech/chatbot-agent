@@ -6,6 +6,9 @@ const required = [
   "VERIFY_TOKEN",
   "DATABASE_URL",
   "GEMINI_API_KEY",
+  "INSTAGRAM_TOKEN",
+  "INSTAGRAM_PAGE_ID",
+  
 ];
 
 for (const key of required) {
@@ -20,4 +23,6 @@ module.exports = {
   phoneNumberId: process.env.PHONE_NUMBER_ID,
   verifyToken: process.env.VERIFY_TOKEN,
   geminiApiKey: process.env.GEMINI_API_KEY,
+  instagramToken: process.env.INSTAGRAM_TOKEN,
+  instagramPageId: process.env.INSTAGRAM_PAGE_ID,
 };

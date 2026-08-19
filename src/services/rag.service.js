@@ -18,43 +18,34 @@ async function saveMessage(conversationId, role, content) {
     data: { conversationId, role, content },
   });
 }
+async function getActiveTicket({ platform, phone, igUserId }) {
+  const where = platform === "whatsapp"
+    ? { platform, phone, status: "open" }
+    : { platform, igUserId, status: "open" };
 
-async function getActiveTicket(phone) {
   let conversation = await prisma.conversation.findFirst({
-    where: { phone, status: "open" },
+    where,
     orderBy: { createdAt: "desc" },
   });
 
   if (!conversation) {
     conversation = await prisma.conversation.create({
-      data: { phone, status: "open" },
+      data: { platform, phone, igUserId, status: "open" },
     });
   }
 
   return conversation;
 }
 
-async function handleUserQuery(phone, userMessage) {
-  const conversation = await getActiveTicket(phone);
+async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
+  const conversation = await getActiveTicket({ platform, phone, igUserId });
   const history = await getConversationHistory(conversation.id);
-
-  // 2. Embed the query and retrieve relevant chunks
   const queryEmbedding = await embedText(userMessage);
   const chunks = await searchSimilarChunks(queryEmbedding, 5);
   const context = chunks.map((c) => c.content).join("\n---\n");
-
-  // 3. Generate reply
-  const reply = await generateReply({
-    systemInstruction: SYSTEM_INSTRUCTION,
-    context,
-    history,
-    userMessage,
-  });
-
-  // 4. Save both messages to history
+  const reply = await generateReply({ systemInstruction: SYSTEM_INSTRUCTION, context, history, userMessage });
   await saveMessage(conversation.id, "user", userMessage);
   await saveMessage(conversation.id, "assistant", reply);
-
   return reply;
 }
 

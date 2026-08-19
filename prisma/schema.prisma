@@ -9,13 +9,16 @@ datasource db {
 
 model Conversation {
   id        String    @id @default(uuid())
-  phone     String
+  phone     String?          // now optional — WhatsApp only
+  igUserId  String?          // new — Instagram only
+  platform  String           // "whatsapp" | "instagram"
   status    String    @default("open")
   messages  Message[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
   @@index([phone])
+  @@index([igUserId])
 }
 
 model Message {
