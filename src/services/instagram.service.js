@@ -13,10 +13,10 @@ async function sendTextMessage(recipientId, text) {
       },
       { headers: { "Content-Type": "application/json" } }
     );
+    console.log("Instagram send success:", res.data);
     return res.data;
   } catch (err) {
-    // console.error("Instagram send error:", err.response?.data || err.message);
-    console.log(JSON.stringify(error.response.data, null, 2));
+    console.error("Instagram send error:", JSON.stringify(err.response?.data || err.message, null, 2));
     throw err;
   }
 }
