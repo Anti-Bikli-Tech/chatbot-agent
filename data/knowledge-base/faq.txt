@@ -1,97 +1,240 @@
 # Anti Bikli Ventures — FAQ Knowledge Base
 
-## Company & Brands
-
-**Q: What brands are available under Anti Bikli Ventures?**
-A: The primary brands available or under development include:
-- **Safe Safar** — A verified ride-sharing and travel platform.
-- **Harsheel Water** — A packaged drinking water brand focused on Himalayan purity.
-- **Freshmart Now** — An online grocery and delivery service.
-- **Dead End Bites** — A food and beverage brand.
-- **Krisha Organic** — An organic products brand.
-- **Helmo Guard** — Safety and protection solutions.
+Each entry below is a self-contained chunk: it repeats enough context (company/brand name) to stand alone when retrieved individually, and uses a consistent `### Q:` / `A:` structure with a `tags:` line for metadata filtering. Split chunks on the `---` separators.
 
 ---
 
-## Krisha Organic
+### Q: What brands are available under Anti Bikli Ventures?
+tags: brands, portfolio, company-overview
 
-**Q: What is Krisha Organics?**
-A: Krisha Organic is the premium organic food and healthy lifestyle brand of Anti Bikli Ventures Pvt. Ltd., committed to delivering 100% natural, chemical-free, and high-quality food products that promote a healthier future.
-
-**Q: What products are available on Krisha Organic?**
-A: The products available on Krisha Organic are:
-- Spices & Seasonings
-- Sauces & Condiments
-- Dry Fruits & Nuts
-- Pulses & Grains
-- Flours
-- Oils
-- Peanut Butter
-- Chawanprash
-- Rice
-- Ghee
-- Jaggery & Sweeteners
-- Pickles & Preserves
-- Herbs & Superfoods
-- Tea & Beverages
-- Ready to Cook & Mixes
-- And more
-
-**Q: What are the key products of Krisha Organic?**
-A: Our key products are spices and seasonings, sauces & condiments, dry fruits & nuts, pulses & grains, flours, oils, peanut butter, chawanprash, rice, ghee, jaggery & sweeteners, pickles & preserves, herbs & superfoods, tea & beverages, ready to cook & mixes, and more.
-
-**Q: What makes Krisha Organics different from other food brands?**
-A: We bring transparency along with quality. Every product will have:
-- QR Traceability
-- Farm Information
-- Batch Details
-- Quality Reports
-- Farmer Story
-
-**Q: How do you provide transparency?**
-A: The label on each product consists of a QR code which, after scanning, provides information such as:
-- Source Details
-- Quality Details
-- Manufacturing Info
-- Manufacturing Unit Details
-- Supply Chain Track
-- All Certifications and Compliance Documents
-
-**Q: What facilities does Krisha Organic provide?**
-A: We facilitate the following:
-- Shop Organic Products
-- QR Traceability Scan
-- Farm to Fork Journey
-- Live Order Tracking
-- Monthly Subscription
-- Secure Payments
-- AI Product Recommendations
-- Loyalty & Rewards
-- Export Orders
-- FreshMart Now Integration
-- Sanvora Global Import Export Integration
-- 24x7 Customer Support
-
-**Q: Where can I buy Krisha Organic products?**
-A: You can buy our products directly through several online and offline channels:
-- **Direct to Consumer (D2C):** Official website, mobile app, and direct sales.
-- **E-commerce Platforms:** Amazon, Flipkart, BigBasket, Meesho, and more.
-- **Modern Trade Stores:** Physical retail stores, supermarkets, and organic stores.
-- **Distributors & Wholesalers:** Available through a PAN India distribution network.
-- **Institutional Partners:** Supplied to businesses, hospitals, schools, gyms, and restaurants.
+A: Anti Bikli Ventures' primary brands, available or under development, include:
+- **Safe Safar** — a verified ride-sharing and travel platform
+- **Harsheel Water** — a packaged drinking water brand focused on Himalayan purity
+- **Freshmart Now** — an online grocery and delivery service
+- **Dead End Bites** — a food and beverage brand
+- **Krisha Organic** — an organic products brand
+- **Helmo Guard** — safety and protection solutions
 
 ---
 
-## Customer Support
+### Q: What products are available on Krisha Organic?
+tags: krisha-organic, products, catalog
 
-**Q: How can I contact customer support?**
-A: You can contact us by:
-- Email: info@antibikliventures.com
-- Phone: 9045236368
-- Corporate Office: 369/408 Old Dalanwala, Dehradun, Uttarakhand
+A: Krisha Organic offers spices and seasonings, sauces and condiments, dry fruits and nuts, pulses and grains, flours, oils, peanut butter, chawanprash, rice, ghee, jaggery and sweeteners, pickles and preserves, herbs and superfoods, tea and beverages, ready-to-cook mixes, and more.
 
-**Q: How can I contact Krisha Organic for a product, order, complaint, or other issue that the chatbot cannot resolve?**
-A: You can contact us by:
-- Email: info@antibikliventures.com
-- Phone: 9045236368
-- Corporate Office: 369/408 Old Dalanwala, Dehradun, Uttarakhand
+---
+
+### Q: What are the key products of Krisha Organic?
+tags: krisha-organic, products, catalog
+
+A: Krisha Organic's key products are spices and seasonings, sauces and condiments, dry fruits and nuts, pulses and grains, flours, oils, peanut butter, chawanprash, rice, ghee, jaggery and sweeteners, pickles and preserves, herbs and superfoods, tea and beverages, and ready-to-cook mixes.
+
+---
+
+### Q: How can I contact Anti Bikli Ventures customer support?
+tags: contact, support, customer-service
+
+A: You can reach Anti Bikli Ventures customer support by emailing info@antibikliventures.com, calling 9045236368, or visiting the corporate office at 369/408 Old Dalanwala, Dehradun, Uttarakhand.
+
+---
+
+### Q: What makes Krisha Organics different from other food brands?
+tags: krisha-organic, differentiation, transparency
+
+A: Krisha Organic brings transparency along with quality. Every product includes:
+- QR traceability
+- Farm information
+- Batch details
+- Quality reports
+- Farmer story
+
+---
+
+### Q: What facilities does Krisha Organic provide?
+tags: krisha-organic, features, services
+
+A: Krisha Organic provides the following facilities:
+- Shop organic products
+- QR traceability scan
+- Farm-to-fork journey
+- Live order tracking
+- Monthly subscription
+- Secure payments
+- AI product recommendations
+- Loyalty and rewards
+- Export orders
+- FreshMart Now integration
+- Sanvora global import-export integration
+- 24x7 customer support
+
+---
+
+### Q: Where can I buy Krisha Organic products?
+tags: krisha-organic, purchase, availability, retail
+
+A: Krisha Organic products are available through several online and offline channels:
+- **Direct to consumer (D2C):** official website, mobile app, and direct sales
+- **E-commerce platforms:** Amazon, Flipkart, BigBasket, Meesho, and more
+- **Modern trade stores:** physical retail stores, supermarkets, and organic stores
+- **Distributors and wholesalers:** available through a pan-India distribution network
+- **Institutional partners:** supplied to businesses, hospitals, schools, gyms, and restaurants
+
+---
+
+### Q: How can I contact Krisha Organic about a product, order, or complaint the chatbot can't resolve?
+tags: krisha-organic, contact, support, escalation
+
+A: For product, order, complaint, or other issues the chatbot cannot resolve, contact Anti Bikli Ventures (Krisha Organic's parent company) by emailing info@antibikliventures.com, calling 9045236368, or visiting the corporate office at 369/408 Old Dalanwala, Dehradun, Uttarakhand.
+
+---
+
+### Q: How does Krisha Organic provide transparency?
+tags: krisha-organic, transparency, qr-code
+
+A: Each Krisha Organic product label includes a QR code that, when scanned, provides:
+1. Source details
+2. Quality details
+3. Manufacturing info
+4. Manufacturing unit details
+5. Supply chain track
+6. All certifications and compliance documents
+
+---
+
+### Q: What is Krisha Organics?
+tags: krisha-organic, brand-overview
+
+A: Krisha Organic is the premium organic food and healthy lifestyle brand of Anti Bikli Ventures Pvt. Ltd., committed to delivering 100% natural, chemical-free, high-quality food products that promote a healthier future.
+
+---
+
+### Q: Where is Anti Bikli Ventures located?
+tags: location, office, address
+
+A: Anti Bikli Ventures is located in Dehradun. The full corporate office address is 369/408 Old Dalanwala, Dehradun, Uttarakhand.
+
+---
+
+### Q: How can I contact Anti Bikli Ventures?
+tags: contact, support
+
+A: You can contact Anti Bikli Ventures by emailing info@antibikliventures.com, calling 9045236368, or visiting the corporate office at 369/408 Old Dalanwala, Dehradun, Uttarakhand.
+
+---
+
+### Q: Does Anti Bikli Ventures provide 24/7 support?
+tags: support, hours, availability
+
+A: Yes, Anti Bikli Ventures provides 24/7 support through email and phone. You can also visit the office at 369/408 Old Dalanwala, Dehradun, Uttarakhand, Monday–Friday, 10:00 AM–6:00 PM.
+
+---
+
+### Q: What are Anti Bikli Ventures' working hours?
+tags: hours, office
+
+A: Anti Bikli Ventures' office working hours are Monday–Friday, 10:00 AM–6:00 PM.
+
+---
+
+### Q: Is Anti Bikli Ventures available on weekends?
+tags: hours, availability, weekend
+
+A: The office is open Monday–Friday, 10:00 AM–6:00 PM, and closed on weekends. However, customer support is available on weekends via email (info@antibikliventures.com) and phone (9045236368).
+
+---
+
+### Q: Where can I find Anti Bikli Ventures job vacancies?
+tags: careers, jobs, hiring
+
+A: Current open positions at Anti Bikli Ventures are listed on the Careers Page: https://antibikliventures.com/careers
+
+---
+
+### Q: Where can I submit a complaint to Anti Bikli Ventures?
+tags: complaint, support-portal
+
+A: You can submit a formal complaint through the online Support Portal at https://antibikliventures.com/contact-us/ or by emailing info@antibikliventures.com.
+
+---
+
+### Q: What is Anti Bikli Ventures' privacy policy?
+tags: privacy-policy, legal
+
+A: The Anti Bikli Ventures privacy policy outlines how the company collects, uses, and protects personal information, ensuring data remains safe and secure. The full document is available at https://antibikliventures.com/privacy-policy
+
+---
+
+### Q: What is Anti Bikli Ventures' contact number?
+tags: contact, phone, whatsapp
+
+A: The best ways to reach Anti Bikli Ventures are:
+1. **Phone/WhatsApp:** 9045236368, for queries regarding any brand (Krisha Organic, Safe Safar, Dead End Bites, Harsheel Water, FreshMart Now, or Helmo Guard)
+2. **Office address:** 369/408 Old Dalanwala, Dehradun, Uttarakhand
+3. **Working hours:** Monday to Friday, 10:00 AM to 6:00 PM
+
+---
+
+### Q: What does Anti Bikli Ventures do?
+tags: company-overview, mission, brands
+
+A: Anti Bikli Ventures is a dynamic holding company that builds, manages, and grows a diverse ecosystem of innovative brands across multiple industries. Its mission is to create scalable businesses that deliver long-term value, solve real-world challenges, and improve everyday life. Its major brands include:
+- **Krisha Organic:** premium-quality, chemical-free organic foods and ingredients
+- **FreshMart Now:** modern retail and grocery service for faster, smarter shopping
+- **Harsheel Water:** pure, high-quality packaged drinking water
+- **Safe Safar, Dead End Bites, and Helmo Guard:** specialized brands covering travel safety, food services, and security solutions
+
+---
+
+### Q: Where is Anti Bikli Ventures' company based?
+tags: location, office, address
+
+A: Anti Bikli Ventures is based in Dehradun, Uttarakhand. The official office address is 369/408 Old Dalanwala, Dehradun, Uttarakhand. Visitors are welcome during working hours (Monday to Friday, 10:00 AM to 6:00 PM).
+
+---
+
+### Q: Which cities or regions does Anti Bikli Ventures currently serve?
+tags: coverage, regions, operations
+
+A: Anti Bikli Ventures is headquartered in Dehradun, Uttarakhand, where its core operations and corporate office are located. While the management and strategic hub are based in Dehradun, its brands — Krisha Organic, FreshMart Now, Harsheel Water, Safe Safar, Dead End Bites, and Helmo Guard — operate across broader markets, scaling their products, digital services, and distribution networks depending on the specific offering.
+
+---
+
+### Q: What is Anti Bikli Ventures' refund policy?
+tags: refund-policy, legal
+
+A: The full refund policy is available on the Refund Policy page: https://antibikliventures.com/refund-policy
+
+---
+
+### Q: How can I apply for a position at Anti Bikli Ventures?
+tags: careers, jobs, hiring
+
+A: Open positions at Anti Bikli Ventures are listed on the Careers Page: https://antibikliventures.com/careers
+
+---
+
+### Q: What is the best way to contact Anti Bikli Ventures?
+tags: contact, office, visit
+
+A: The best way to contact Anti Bikli Ventures is to visit the corporate office at 369/408 Old Dalanwala, Dehradun, Uttarakhand, between Monday and Friday, 10:00 AM to 6:00 PM. Alternatively, email info@antibikliventures.com or call 9045236368.
+
+---
+
+### Q: Hello / greeting
+tags: greeting, welcome, chatbot-intro
+
+A: Hello! Welcome to Anti Bikli Ventures! I'm your virtual assistant, here to help you with anything you need regarding the company and its brands.
+
+**About Us & Office Info**
+- Location: 369/408 Old Dalanwala, Dehradun, Uttarakhand
+- Working Hours: Monday to Friday, 10:00 AM to 6:00 PM
+
+**Our Brands**
+- Krisha Organic
+- Safe Safar
+- Dead End Bites
+- Harsheel Water
+- FreshMart Now
+- Helmo Guard
+
+How can I help you today?
