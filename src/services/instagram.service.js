@@ -1,7 +1,7 @@
 const axios = require("axios");
 const env = require("../config/exampleenv");
 
-const BASE_URL = `https://graph.facebook.com/v20.0/me/messages`;
+const BASE_URL = `https://graph.instagram.com/v20.0/me/messages`;
 
 async function sendTextMessage(recipientId, text) {
   try {
