@@ -14,7 +14,7 @@ async function embedText(text) {
   return res.embeddings[0].values;
 }
 
-async function generateReply({ systemInstruction, context, history, userMessage }) {
+async function generateReply({ systemInstruction, context, history, userMessage }, retries = 3) {
   const prompt = `
 ${systemInstruction}
 
@@ -27,12 +27,23 @@ ${history.map((m) => `${m.role}: ${m.content}`).join("\n")}
 User: ${userMessage}
 `.trim();
 
- const res = await ai.models.generateContent({
-  model: "gemini-3.6-flash",
-  contents: prompt,
-});
-
-  return res.text;
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await ai.models.generateContent({
+        model: "gemini-3.6-flash",
+        contents: prompt,
+      });
+      return res.text;
+    } catch (err) {
+      const isRetryable = err.status === 503 || err.status === 429;
+      if (isRetryable && i < retries - 1) {
+        console.warn(`Gemini ${err.status}, retrying... attempt ${i + 1}`);
+        await new Promise((r) => setTimeout(r, 1000 * (i + 1)));
+        continue;
+      }
+      throw err;
+    }
+  }
 }
 
 module.exports = { embedText, generateReply };

@@ -43,7 +43,15 @@ async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
   const queryEmbedding = await embedText(userMessage);
   const chunks = await searchSimilarChunks(queryEmbedding, 5);
   const context = chunks.map((c) => c.content).join("\n---\n");
-  const reply = await generateReply({ systemInstruction: SYSTEM_INSTRUCTION, context, history, userMessage });
+
+  let reply;
+  try {
+    reply = await generateReply({ systemInstruction: SYSTEM_INSTRUCTION, context, history, userMessage });
+  } catch (err) {
+    console.error("Gemini generateReply failed after retries:", err.message);
+    reply = "Abhi thodi technical dikkat aa rahi hai, thodi der baad try karo.";
+  }
+
   await saveMessage(conversation.id, "user", userMessage);
   await saveMessage(conversation.id, "assistant", reply);
   return reply;
