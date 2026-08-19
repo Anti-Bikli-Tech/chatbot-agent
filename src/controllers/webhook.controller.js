@@ -28,6 +28,7 @@ exports.receiveMessage = async (req, res) => {
       const text = messaging?.message?.text;
 
       if (!senderId || !text) return;
+        console.log("senderId from webhook:", senderId); 
 
       const reply = await handleUserQuery({
         platform: "instagram",
