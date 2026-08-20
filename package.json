@@ -9,7 +9,6 @@
     "dev": "nodemon server.js",
     "ingest": "node src/scripts/ingestDocuments.js",
     "postinstall": "prisma generate"
-
   },
   "keywords": [],
   "author": "",
@@ -17,6 +16,7 @@
   "type": "commonjs",
   "dependencies": {
     "@google/genai": "^2.17.1",
+    "@openrouter/sdk": "^1.2.47",
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
     "axios": "^1.19.0",

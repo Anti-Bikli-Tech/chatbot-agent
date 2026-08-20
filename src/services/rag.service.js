@@ -1,4 +1,5 @@
-const { embedText, generateReply } = require("./gemini.service");
+const { embedText  } = require("./gemini.service");
+const { generateReply } = require("./llm.service");
 const { searchSimilarChunks } = require("./vectorStore.service");
 const prisma = require("../config/prisma");
 
@@ -11,8 +12,10 @@ Formatting rules for WhatsApp/Instagram (plain text chat, not a document):
 - Use *single asterisks* for bold (WhatsApp's bold syntax), never double asterisks or markdown headers.
 - If listing multiple items (like products or brands), use a simple flat "-" list, one line each, no sub-bullets.
 
-Answer using the provided context. If the context doesn't contain the answer, say you don't have that information and suggest contacting support — do not make things up.`;
-
+Answer using the provided context. If the context doesn't contain the answer, or the user is asking for more detailed help than you can give (e.g. order-specific issues, complaints, or anything beyond general info), say you don't have that information and direct them to:
+📞 +91 9762036368
+📧 info.antibikliventures@gmail.com or info@antibikliventures.com
+Do not make things up.`;
 async function getConversationHistory(conversationId, limit = 10) {
   const messages = await prisma.message.findMany({
     where: { conversationId },
@@ -48,8 +51,13 @@ async function getActiveTicket({ platform, phone, igUserId }) {
 
 async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
   const conversation = await getActiveTicket({ platform, phone, igUserId });
-  const history = await getConversationHistory(conversation.id);
-  const queryEmbedding = await embedText(userMessage);
+
+ 
+  const [history, queryEmbedding] = await Promise.all([
+    getConversationHistory(conversation.id, 6), 
+    embedText(userMessage),
+  ]);
+
   const chunks = await searchSimilarChunks(queryEmbedding, 5);
   const context = chunks.map((c) => c.content).join("\n---\n");
 
