@@ -1,5 +1,4 @@
-const { embedText  } = require("./gemini.service");
-const { generateReply } = require("./llm.service");
+const { embedText, generateReply } = require("./gemini.service");
 const { searchSimilarChunks } = require("./vectorStore.service");
 const prisma = require("../config/prisma");
 
@@ -16,6 +15,7 @@ Answer using the provided context. If the context doesn't contain the answer, or
 📞 +91 9762036368
 📧 info.antibikliventures@gmail.com or info@antibikliventures.com
 Do not make things up.`;
+
 async function getConversationHistory(conversationId, limit = 10) {
   const messages = await prisma.message.findMany({
     where: { conversationId },
@@ -30,6 +30,7 @@ async function saveMessage(conversationId, role, content) {
     data: { conversationId, role, content },
   });
 }
+
 async function getActiveTicket({ platform, phone, igUserId }) {
   const where = platform === "whatsapp"
     ? { platform, phone, status: "open" }
@@ -52,9 +53,8 @@ async function getActiveTicket({ platform, phone, igUserId }) {
 async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
   const conversation = await getActiveTicket({ platform, phone, igUserId });
 
- 
   const [history, queryEmbedding] = await Promise.all([
-    getConversationHistory(conversation.id, 6), 
+    getConversationHistory(conversation.id, 6),
     embedText(userMessage),
   ]);
 
@@ -65,16 +65,14 @@ async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
   try {
     reply = await generateReply({ systemInstruction: SYSTEM_INSTRUCTION, context, history, userMessage });
   } catch (err) {
-    console.error("Gemini generateReply failed after retries:", err.message);
-    reply = "Abhi thodi technical dikkat aa rahi hai, thodi der baad try karo.";
+    console.error("Groq generateReply failed after retries:", err.message);
+    reply = "Abhi thodi technical dikkat aa rahi hai 🙏 Aap seedha humse contact kar sakte hain:\n📞 +91 9762036368\n📧 info.antibikliventures@gmail.com";
   }
 
   await saveMessage(conversation.id, "user", userMessage);
   await saveMessage(conversation.id, "assistant", reply);
   return reply;
 }
-
-
 
 async function closeTicket(conversationId) {
   return prisma.conversation.update({
