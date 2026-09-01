@@ -8,7 +8,7 @@ const required = [
   "GEMINI_API_KEY",
   "INSTAGRAM_TOKEN",
   "INSTAGRAM_PAGE_ID",
-  
+  "OPENAI_API_KEY",
 ];
 
 for (const key of required) {
@@ -25,4 +25,5 @@ module.exports = {
   geminiApiKey: process.env.GEMINI_API_KEY,
   instagramToken: process.env.INSTAGRAM_TOKEN,
   instagramPageId: process.env.INSTAGRAM_PAGE_ID,
+  openaiApiKey: process.env.OPENAI_API_KEY,
 };

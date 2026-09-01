@@ -51,25 +51,32 @@ async function getActiveTicket({ platform, phone, igUserId }) {
 }
 
 async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
+  const t0 = Date.now();
   const conversation = await getActiveTicket({ platform, phone, igUserId });
+  console.log(`[timing] getActiveTicket: ${Date.now() - t0}ms`);
 
+  const t1 = Date.now();
   const [history, queryEmbedding] = await Promise.all([
     getConversationHistory(conversation.id, 6),
     embedText(userMessage),
   ]);
+  console.log(`[timing] history+embed: ${Date.now() - t1}ms`);
 
+  const t2 = Date.now();
   const chunks = await searchSimilarChunks(queryEmbedding, 5);
+  console.log(`[timing] vectorSearch: ${Date.now() - t2}ms`);
   const context = chunks.map((c) => c.content).join("\n---\n");
 
   let reply;
+  const t3 = Date.now();
   try {
     reply = await generateReply({ systemInstruction: SYSTEM_INSTRUCTION, context, history, userMessage });
+    console.log(`[timing] generateReply: ${Date.now() - t3}ms`);
   } catch (err) {
     console.error("OpenAI generateReply failed after retries:", err.message);
     reply = "Abhi thodi technical dikkat aa rahi hai 🙏 Aap seedha humse contact kar sakte hain:\n📞 +91 9762036368\n📧 info.antibikliventures@gmail.com";
   }
 
-  // Don't block the reply on these — fire and forget, log if they fail
   saveMessage(conversation.id, "user", userMessage).catch((err) =>
     console.error("Failed to save user message:", err)
   );

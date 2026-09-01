@@ -77,13 +77,38 @@ const env = require("../config/exampleenv");
 
 const ai = new GoogleGenAI({ apiKey: env.geminiApiKey });
 
-async function embedText(text) {
-  const res = await ai.models.embedContent({
-    model: "gemini-embedding-001",
-    contents: text,
-    config: { outputDimensionality: 768 },
-  });
-  return res.embeddings[0].values;
+async function embedText(text, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await fetch("https://api.openai.com/v1/embeddings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${env.openaiApiKey}`,
+        },
+        body: JSON.stringify({
+          model: "text-embedding-3-small",
+          input: text,
+          dimensions: 768,
+        }),
+      });
+      if (!res.ok) {
+        const err = new Error(`OpenAI embed error ${res.status}`);
+        err.status = res.status;
+        throw err;
+      }
+      const data = await res.json();
+      return data.data[0].embedding;
+    } catch (err) {
+      const isRetryable = err.status === 429 || err.status === 503;
+      if (isRetryable && i < retries - 1) {
+        console.warn(`OpenAI embed ${err.status}, retrying... attempt ${i + 1}`);
+        await new Promise((r) => setTimeout(r, 1000 * (i + 1)));
+        continue;
+      }
+      throw err;
+    }
+  }
 }
 
 async function generateReply({ systemInstruction, context, history, userMessage }, retries = 2) {

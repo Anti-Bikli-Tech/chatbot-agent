@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  
 }
 
 model Conversation {
@@ -18,8 +17,8 @@ model Conversation {
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
 
-  @@index([phone])
-  @@index([igUserId])
+  @@index([platform, phone, status])
+  @@index([platform, igUserId, status])
 }
 
 model Message {
@@ -29,6 +28,8 @@ model Message {
   role           String
   content        String
   createdAt      DateTime     @default(now())
+
+  @@index([conversationId, createdAt])
 }
 
 model Document {
