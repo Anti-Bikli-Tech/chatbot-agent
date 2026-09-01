@@ -9,10 +9,11 @@ datasource db {
 
 model Conversation {
   id        String    @id @default(uuid())
-  phone     String?          // now optional — WhatsApp only
-  igUserId  String?          // new — Instagram only
-  platform  String           // "whatsapp" | "instagram"
+  phone     String?
+  igUserId  String?
+  platform  String
   status    String    @default("open")
+  mode      String    @default("bot")   // "bot" | "human" — dashboard se reply karte hi "human" ho jayega
   messages  Message[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

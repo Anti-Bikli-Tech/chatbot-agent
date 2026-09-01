@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/", webhookRoutes);
+app.use("/", require("./routes/dashboard.route"));
 
 app.get("/", (req, res) => res.send("Bot server is running"));
 
