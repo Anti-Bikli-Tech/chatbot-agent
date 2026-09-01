@@ -1,4 +1,4 @@
-const { embedText, generateReply } = require("./gemini.service");
+const { embedText, generateReply } = require("./llm.service");
 const { searchSimilarChunks } = require("./vectorStore.service");
 const prisma = require("../config/prisma");
 
@@ -65,12 +65,18 @@ async function handleUserQuery({ platform, phone, igUserId, userMessage }) {
   try {
     reply = await generateReply({ systemInstruction: SYSTEM_INSTRUCTION, context, history, userMessage });
   } catch (err) {
-    console.error("Groq generateReply failed after retries:", err.message);
+    console.error("OpenAI generateReply failed after retries:", err.message);
     reply = "Abhi thodi technical dikkat aa rahi hai 🙏 Aap seedha humse contact kar sakte hain:\n📞 +91 9762036368\n📧 info.antibikliventures@gmail.com";
   }
 
-  await saveMessage(conversation.id, "user", userMessage);
-  await saveMessage(conversation.id, "assistant", reply);
+  // Don't block the reply on these — fire and forget, log if they fail
+  saveMessage(conversation.id, "user", userMessage).catch((err) =>
+    console.error("Failed to save user message:", err)
+  );
+  saveMessage(conversation.id, "assistant", reply).catch((err) =>
+    console.error("Failed to save assistant message:", err)
+  );
+
   return reply;
 }
 
